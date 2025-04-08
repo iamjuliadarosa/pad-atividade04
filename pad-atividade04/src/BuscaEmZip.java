@@ -7,7 +7,7 @@ public class BuscaEmZip{
 	Semaphore sem = new Semaphore(2);
 	String caminhoZip = "/home/juliadarosa/eclipse-workspace/pad-atividade04/arquivosNomes.zip";
 	
-	synchronized void Busca(String busca) throws InterruptedException {
+	void Busca(String busca) throws InterruptedException {
 		
 			sem.acquire();
 			System.out.printf("Acquired para a busca de: "+busca+"\n");
