@@ -16,12 +16,16 @@ public class BuscaEmZip{
 
             while (entradas.hasMoreElements()) {
                 ZipEntry entrada = entradas.nextElement();
+                if (entrada.isDirectory()) continue;
 
                 try (BufferedReader reader = new BufferedReader(
                         new InputStreamReader(zipFile.getInputStream(entrada)))) {
-                	
+                	sem.acquire();
+        			System.out.printf("Acquired para a busca de "+busca+" no arquivo "+entrada.getName()+"\n");
                 	ProcuraEmArquivo(reader, entrada.getName(), busca);
-                    
+        			System.out.printf("Released a busca de "+busca+" no arquivo "+entrada.getName()+"\n");
+                	Thread.sleep(100);
+            		sem.release();
                 }
             }
 
