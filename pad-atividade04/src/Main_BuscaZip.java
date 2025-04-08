@@ -7,9 +7,9 @@ public class Main_BuscaZip {
 
 		Thread BuscaGlauco = new Thread(new Buscar(Busca),"glauco");
 
-		Thread BuscaJulia= new Thread(new Buscar(Busca),"juliana");
+		Thread BuscaJulia= new Thread(new Buscar(Busca),"julia");
 
-		Thread BuscaEli = new Thread(new Buscar(Busca),"elias");
+		Thread BuscaEli = new Thread(new Buscar(Busca),"eli");
 
 		Thread BuscaArt = new Thread(new Buscar(Busca),"arthur");
 		
